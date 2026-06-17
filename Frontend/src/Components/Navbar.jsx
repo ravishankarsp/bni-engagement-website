@@ -17,7 +17,7 @@ const Navbar = ({activeItem}) => {
       {/* Right Section: Notification & Profile */}
       <div className="flex items-center gap-6">
         {/* Notification Bell with Badge */}
-        <button className="relative p-2 text-[#829AB1] hover:text-slate-700 transition-colors rounded-full hover:bg-slate-50">
+        <button className="relative p-2 text-[#829AB1] hover:text-slate-700 transition-colors rounded-full hover:bg-slate-50 cursor-pointer">
           <Bell className="w-6 h-6 stroke-[2]" />
           {/* Red Notification Badge */}
           <span className="absolute top-1 right-1 bg-[#FF3B30] text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border border-white">
@@ -26,7 +26,7 @@ const Navbar = ({activeItem}) => {
         </button>
 
         {/* User Profile Dropdown */}
-        <button className="flex items-center gap-2 p-1 rounded-xl hover:bg-slate-50 transition-colors group">
+        <button className="flex items-center gap-2 p-1 rounded-xl hover:bg-slate-50 transition-colors group cursor-pointer">
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100"
             alt="User Avatar"

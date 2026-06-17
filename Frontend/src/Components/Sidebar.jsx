@@ -29,7 +29,6 @@ import {
 } from "lucide-react";
 
 const Sidebar = ({ activeItem, setActiveItem }) => {
-
   // Section open / close states
   const [openSections, setOpenSections] = useState({
     core: true,
@@ -49,7 +48,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
   const sections = [
     {
       id: "core",
-      title: "Core Modules",
+      title: "Members & Operations",
       items: [
         { name: "Member Management", icon: Users },
         { name: "Visitor Management", icon: UserPlus },
@@ -104,7 +103,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
   ];
 
   return (
-    <aside className="w-72 h-screen bg-white border-r border-gray-100 flex flex-col justify-between font-sans">
+    <aside className="w-74 h-screen bg-white border-r border-gray-100 flex flex-col justify-between font-sans">
       {/* Top Section */}
       <div className="p-5 overflow-y-auto custom-scrollbar">
         {/* Brand Logo */}
@@ -153,9 +152,9 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
                   <span>{section.title}</span>
 
                   {isOpen ? (
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-4 h-4 cursor-pointer transition-all duration-300 hover:scale-[1.2]" />
                   ) : (
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-4 h-4 cursor-pointer transition-all duration-300 hover:scale-[1.2]" />
                   )}
                 </button>
 
@@ -170,7 +169,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
                         <button
                           key={item.name}
                           onClick={() => setActiveItem(item.name)}
-                          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200
+                          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer transition-all duration-300 hover:scale-[1.04]
                             ${
                               isActive
                                 ? "bg-blue-600 text-white shadow-md shadow-blue-200"
