@@ -1,7 +1,7 @@
-import React from 'react';
-import { Menu, Bell, ChevronDown } from 'lucide-react';
+import React from "react";
+import { Menu, Bell, ChevronDown } from "lucide-react";
 
-const TopNavbar = () => {
+const Navbar = ({activeItem}) => {
   return (
     <header className="w-full h-20 bg-white border-b border-slate-100 flex items-center justify-between px-8 font-sans">
       {/* Left Section: Menu Toggle & Page Title */}
@@ -10,7 +10,7 @@ const TopNavbar = () => {
           <Menu className="w-6 h-6 stroke-[2]" />
         </button> */}
         <h1 className="text-2xl font-bold text-[#0A192F] tracking-tight">
-          Announcements
+          {activeItem}
         </h1>
       </div>
 
@@ -39,4 +39,4 @@ const TopNavbar = () => {
   );
 };
 
-export default TopNavbar;
+export default Navbar;
