@@ -6,9 +6,9 @@ const TopNavbar = () => {
     <header className="w-full h-20 bg-white border-b border-slate-100 flex items-center justify-between px-8 font-sans">
       {/* Left Section: Menu Toggle & Page Title */}
       <div className="flex items-center gap-5">
-        <button className="text-slate-500 hover:text-slate-800 transition-colors p-1 rounded-lg hover:bg-slate-50">
+        {/* <button className="text-slate-500 hover:text-slate-800 transition-colors p-1 rounded-lg hover:bg-slate-50">
           <Menu className="w-6 h-6 stroke-[2]" />
-        </button>
+        </button> */}
         <h1 className="text-2xl font-bold text-[#0A192F] tracking-tight">
           Announcements
         </h1>
