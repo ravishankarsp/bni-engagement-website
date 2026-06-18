@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
@@ -24,7 +20,7 @@ function App() {
 
           <main className="p-6">
             <Routes>
-              <Route path="/" element="" />
+              <Route path="/dashboard" element="Dashboard" />
               <Route
                 path="/member-performance"
                 element={<Member_Performance />}
