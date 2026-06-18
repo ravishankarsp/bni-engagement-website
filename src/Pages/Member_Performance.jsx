@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import MemberModal from "../Components/MemberModal";
 const SummaryCard = () => {
     return (
         <>
@@ -228,6 +228,7 @@ const Member_Performance = () => {
             </div>
             <FilterContainer />
             <Members />
+            <MemberModal/>
         </>
     )
 }
