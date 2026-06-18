@@ -33,7 +33,7 @@ const StatCard = ({ title, value, percentage, isCurrency }) => {
     );
 };
 
-export default function MemberShip() {
+const MemberShip =  ()=> {
     return (
         <div className="absolute z-10 top-0 left-0 right-0 w-full h-full bg-black/20 flex items-center">
             <div className="max-w-7xl mx-auto space-y-6 bg-white px-10 py-8">
