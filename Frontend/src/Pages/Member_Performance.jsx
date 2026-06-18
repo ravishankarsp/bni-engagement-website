@@ -1,5 +1,4 @@
 import { useState } from "react"
-import MemberShip from "../Components/MemberModal"
 
 const SummaryCard = () => {
     return (
@@ -229,7 +228,6 @@ const Member_Performance = () => {
             </div>
             <FilterContainer />
             <Members />
-            <MemberShip/>
         </>
     )
 }

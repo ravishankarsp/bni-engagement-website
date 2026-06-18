@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
+import Member_Performance from './Pages/Member_Performance'
 
 function App() {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -14,7 +15,7 @@ function App() {
           <Navbar activeItem={activeItem} />
 
           <main className="p-6">
-            <h1 className="text-2xl font-bold text-slate-900">{activeItem}</h1>
+            <Member_Performance/>
           </main>
         </div>
       </div>

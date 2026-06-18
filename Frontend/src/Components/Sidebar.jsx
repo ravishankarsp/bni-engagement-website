@@ -103,7 +103,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
   ];
 
   return (
-    <aside className="w-74 h-screen bg-white border-r border-gray-100 flex flex-col justify-between font-sans">
+    <aside className="w-74 h-screen bg-white border-r border-gray-100 flex flex-col justify-between font-sans sticky top-0 bottom-0">
       {/* Top Section */}
       <div className="p-5 overflow-y-auto custom-scrollbar">
         {/* Brand Logo */}
