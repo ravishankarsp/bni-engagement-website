@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   Users,
@@ -50,54 +51,126 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
       id: "core",
       title: "Members & Operations",
       items: [
-        { name: "Member Management", icon: Users },
-        { name: "Visitor Management", icon: UserPlus },
-        { name: "Meeting Scheduler", icon: CalendarDays },
-        { name: "Attendance Tracker", icon: ClipboardCheck },
-        { name: "Referral Tracker", icon: Repeat2 },
-        { name: "TYFCB Tracker", icon: DollarSign },
-        { name: "One-to-One Tracker", icon: Handshake },
+        { name: "Member Management", icon: Users, path: "/member-management" },
+        {
+          name: "Visitor Management",
+          icon: UserPlus,
+          path: "/visitor-management",
+        },
+        {
+          name: "Meeting Scheduler",
+          icon: CalendarDays,
+          path: "/meeting-scheduler",
+        },
+        {
+          name: "Attendance Tracker",
+          icon: ClipboardCheck,
+          path: "/attendance-tracker",
+        },
+        { name: "Referral Tracker", icon: Repeat2, path: "/referral-tracker" },
+        { name: "TYFCB Tracker", icon: DollarSign, path: "/tyfcb-tracker" },
+        {
+          name: "One-to-One Tracker",
+          icon: Handshake,
+          path: "/one-to-one-tracker",
+        },
       ],
     },
     {
       id: "business",
       title: "Business & Performance",
       items: [
-        { name: "Member Performance", icon: BarChart3 },
-        { name: "Chapter Performance", icon: BarChart3 },
-        { name: "Leadership Dashboard", icon: ShieldCheck },
-        { name: "Renewals & Retention", icon: RefreshCcw },
-        { name: "Goal Setting & Tracking", icon: Target },
+        {
+          name: "Member Performance",
+          icon: BarChart3,
+          path: "/member-performance",
+        },
+        {
+          name: "Chapter Performance",
+          icon: BarChart3,
+          path: "/chapter-performance",
+        },
+        {
+          name: "Leadership Dashboard",
+          icon: ShieldCheck,
+          path: "/leadership-dashboard",
+        },
+        {
+          name: "Renewals & Retention",
+          icon: RefreshCcw,
+          path: "/renewals-retention",
+        },
+        {
+          name: "Goal Setting & Tracking",
+          icon: Target,
+          path: "/goal-setting",
+        },
       ],
     },
     {
       id: "engagement",
       title: "Engagement & Communication",
       items: [
-        { name: "Announcements", icon: Megaphone },
-        { name: "Chat & Messaging", icon: MessageSquare },
-        { name: "Events & Trainings", icon: Calendar },
-        { name: "Recognition & Badges", icon: Award },
+        { name: "Announcements", icon: Megaphone, path: "/announcements" },
+        {
+          name: "Chat & Messaging",
+          icon: MessageSquare,
+          path: "/chat-messaging",
+        },
+        {
+          name: "Events & Trainings",
+          icon: Calendar,
+          path: "/events-trainings",
+        },
+        {
+          name: "Recognition & Badges",
+          icon: Award,
+          path: "/recognition-badges",
+        },
       ],
     },
     {
       id: "admin",
       title: "Admin & Utility Modules",
       items: [
-        { name: "Roles & Permissions", icon: ShieldCheck },
-        { name: "Reports & Analytics", icon: FileText },
-        { name: "Payment Tracker", icon: CreditCard },
-        { name: "Email/SMS Integration", icon: Mail },
-        { name: "API Integration", icon: Plug },
+        {
+          name: "Roles & Permissions",
+          icon: ShieldCheck,
+          path: "/roles-permissions",
+        },
+        {
+          name: "Reports & Analytics",
+          icon: FileText,
+          path: "/reports-analytics",
+        },
+        { name: "Payment Tracker", icon: CreditCard, path: "/payment-tracker" },
+        {
+          name: "Email/SMS Integration",
+          icon: Mail,
+          path: "/email-sms-integration",
+        },
+        { name: "API Integration", icon: Plug, path: "/api-integration" },
       ],
     },
     {
       id: "addons",
       title: "Optional Add-ons",
       items: [
-        { name: "Mobile App Module", icon: Smartphone },
-        { name: "BNI Slides Manager", icon: Presentation },
-        { name: "Sponsor Management", icon: BadgeDollarSign },
+        {
+          name: "Mobile App Module",
+          icon: Smartphone,
+          path: "/mobile-app-module",
+        },
+        {
+          name: "BNI Slides Manager",
+          icon: Presentation,
+          path: "/bni-slides-manager",
+        },
+        {
+          name: "Sponsor Management",
+          icon: BadgeDollarSign,
+          path: "/sponsor-management",
+        },
       ],
     },
   ];
@@ -120,7 +193,8 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
         </div>
 
         {/* Dashboard Button */}
-        <button
+        <NavLink
+          to={"/dashboard"}
           onClick={() => setActiveItem("Dashboard")}
           className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 mb-4
             ${
@@ -135,7 +209,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
             }`}
           />
           <span>Dashboard</span>
-        </button>
+        </NavLink>
 
         {/* Module Sections */}
         <nav className="space-y-4">
@@ -146,6 +220,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
               <div key={section.id}>
                 {/* Section Header */}
                 <button
+                  to={section.path}
                   onClick={() => toggleSection(section.id)}
                   className="w-full flex items-center justify-between px-2 py-2 text-xs font-bold uppercase tracking-wide text-slate-400 hover:text-blue-600 transition-colors"
                 >
@@ -166,7 +241,8 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
                       const isActive = activeItem === item.name;
 
                       return (
-                        <button
+                        <NavLink
+                          to={item.path}
                           key={item.name}
                           onClick={() => setActiveItem(item.name)}
                           className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer transition-all duration-300 hover:scale-[1.04]
@@ -182,7 +258,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
                             }`}
                           />
                           <span className="text-left">{item.name}</span>
-                        </button>
+                        </NavLink>
                       );
                     })}
                   </div>
